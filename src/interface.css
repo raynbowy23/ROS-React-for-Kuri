@@ -1,0 +1,39 @@
+.handle_buttons {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.handle_buttons div {
+    padding: 20px 0;
+}
+
+#body_title, #head_title, #eye_title {
+    display: block;
+    border: 1px;
+    background: #0088cc;
+    font-weight: 2px;
+    color: #eeeeee;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#body_row1, #body_row2, #body_row3{
+    text-align: center;
+    padding: 5px;
+}
+
+#head_reset {
+    margin-left: 15px;
+    color: #000000;
+    border: 2px solid #0088cc;
+}
+
+#eye_open, #eye_close {
+    margin: 0 10px;
+    color: #000000;
+    border: 2px solid #0088cc;
+}
