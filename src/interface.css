@@ -3,12 +3,12 @@
     font-size: 18px;
     font-weight: 500;
     margin: auto;
-    width: 50%;
+    width: 90%;
     height: 100%;
 }
 
 .handle_buttons div {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
 }
 
 #body_title, #head_title, #eye_title {
@@ -18,12 +18,45 @@
     font-weight: 2px;
     color: #eeeeee;
     padding: 5px;
-    margin-bottom: 20px;
 }
 
-#body_row1, #body_row2, #body_row3{
-    text-align: center;
-    padding: 5px;
+/* #body_row1, #body_row2, #body_row3, #body_row4, #body_row5{ */
+#body_row {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    /* padding: 5px; */
+}
+
+#left, #right {
+    /* white-space: pre; */
+    display: inline;
+    margin: 0 10px;
+    width: 280px;
+}
+
+#left {
+    text-align: right;
+}
+
+#right {
+    text-align: left;
+}
+
+#body_forward, #body_backward, #body_rotleft, #body_rotright {
+    margin: 15px;
+    /* color: #000000; */
+    border: 2px solid #0088cc;
+}
+
+#head_tilt, #head_pan {
+    margin: 5px;
+    color: #000000;
+    border: 2px solid #0088cc;
+}
+
+.center {
+    font-size: 10px;
 }
 
 #head_reset {
@@ -32,8 +65,16 @@
     border: 2px solid #0088cc;
 }
 
-#eye_open, #eye_close {
-    margin: 0 10px;
+#head_title {
+    margin-bottom: 20px;
+}
+
+#eye_title {
+    margin-top: 20px;
+}
+
+#eye_open, #eye_close, #eye_smile {
+    margin: 20px 10px;
     color: #000000;
     border: 2px solid #0088cc;
 }
