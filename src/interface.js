@@ -533,20 +533,28 @@ export class Interface extends React.Component{
               <Grid item xs={12}>
                 <div id="body_row">
                   <Grid item xs={3}>
+                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Left&nbsp;</Button>
+                    <span></span>
                   </Grid>
                   <Grid item xs={2}>
+                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Left&nbsp;</Button>
+                    <span></span>
                   </Grid>
                   <Grid item xs={2} className="center">
                     <Button id="head_tilt" className="tilt_center" onClick={ this.handleHeadTilt3.bind(this) } >Tilt Center</Button>
                     <Button id="head_pan" className="pan_center" onClick={ this.handleHeadPan3.bind(this) } >Pan Center</Button>
                   </Grid>
                   <Grid item xs={2}>
+                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Right</Button>
+                    <span></span>
                   </Grid>
                   <Grid item xs={3}>
+                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Right</Button>
+                    <span></span>
                   </Grid>
                 </div>
               </Grid>
