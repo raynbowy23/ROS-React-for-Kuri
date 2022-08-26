@@ -490,8 +490,8 @@ export class Interface extends React.Component{
               <div id="body_row">
                 {/* <Grid item xs={6} id="left">    Turn Left<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></Grid>
                 <Grid item xs={6} id="right"><Button id="body_rotright" startIcon={<Redo />}onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Right    </Grid> */}
-                <div id="left">Turn Left<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></div>
-                <div id="right"><Button id="body_rotright" startIcon={<Redo />} onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Right</div>
+                <div id="left">Turn Right<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></div>
+                <div id="right"><Button id="body_rotright" startIcon={<Redo />} onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Left</div>
               </div>
             {/* <Grid item xs={6}>
               <div id="body_row">
@@ -516,45 +516,60 @@ export class Interface extends React.Component{
           <Grid item xs={6}>
             <div className="head_buttons">
               <p id="head_title">HEAD</p>
-              <Grid item xs={12}>
-                <div id="body_row">
+              <p>TILT</p>
+              <div id="body_row">
+                <img id="tilt_img" src="/tilt.png" alt="tilt" />
+              </div>
+              <div id="body_row" className="tilt_row">
+                <Button id="head_tilt" onClick={ this.handleHeadTilt1.bind(this) } >Most Up</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt2.bind(this) } >Up</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Center</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Down</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Most Down</Button>
+              </div>
+              <p>PAN</p>
+              <div id="body_row">
+                <img id="pan_img" src="/pan.png" alt="pan" />
+              </div>
+              <div id="body_row">
+                <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Right</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Right</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan3.bind(this) } >Center</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Left</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Left</Button>
+              </div>
+              
+              {/* <Grid item xs={12}>
+                <div id="body_row"> */}
                   {/* <label>Move Down<Button id="head_down" startIcon={<ArrowDownward />} onMouseDown={ this.handleHeadDown.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
                   <label><Button id="head_up" startIcon={<ArrowUpward />} onMouseDown={ this.handleHeadUp.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Up</label> */}
-                  <Button id="head_tilt" onClick={ this.handleHeadTilt1.bind(this) } >Most Up</Button>
+                  {/* <Button id="head_tilt" onClick={ this.handleHeadTilt1.bind(this) } >Most Up</Button>
                 </div>
               </Grid>
               <Grid item xs={12}>
-                <div id="body_row">
+                <div id="body_row"> */}
                   {/* <label>Move Left<Button id="head_left" startIcon={<RotateLeft />} onMouseDown={ this.handleHeadLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
                   <label><Button id="head_right" startIcon={<RotateRight />} onMouseDown={ this.handleHeadRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Right</label> */}
-                  <Button id="head_tilt" onClick={ this.handleHeadTilt2.bind(this) } >Up</Button>
+                  {/* <Button id="head_tilt" onClick={ this.handleHeadTilt2.bind(this) } >Up</Button>
                 </div>
               </Grid>
               <Grid item xs={12}>
                 <div id="body_row">
                   <Grid item xs={3}>
-                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Left&nbsp;</Button>
-                    <span></span>
                   </Grid>
                   <Grid item xs={2}>
-                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Left&nbsp;</Button>
-                    <span></span>
                   </Grid>
                   <Grid item xs={2} className="center">
                     <Button id="head_tilt" className="tilt_center" onClick={ this.handleHeadTilt3.bind(this) } >Tilt Center</Button>
                     <Button id="head_pan" className="pan_center" onClick={ this.handleHeadPan3.bind(this) } >Pan Center</Button>
                   </Grid>
                   <Grid item xs={2}>
-                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Right</Button>
-                    <span></span>
                   </Grid>
                   <Grid item xs={3}>
-                    <span></span>
                     <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Right</Button>
-                    <span></span>
                   </Grid>
                 </div>
               </Grid>
@@ -567,7 +582,7 @@ export class Interface extends React.Component{
                 <div id="body_row">
                   <Button id="head_tilt" onClick={ this.handleHeadTilt5.bind(this) } >Most Down</Button>
                 </div>
-              </Grid>
+              </Grid> */}
               {/* <div id="body_row">
                 <Button id="head_reset" onMouseDown={ this.handleResetHead.bind(this) } onMouseUp={ this.endHold.bind(this) } >Reset Head</Button>
               </div> */}
