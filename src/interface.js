@@ -32,6 +32,8 @@ const ANG_SPEED = 0.4;
 const HEAD_PAN_SPEED = 0.2;
 const HEAD_TILT_SPEED = 0.1;
 
+const RECONFIGURE_RUNNING = 0;
+
 let counter;
 
 
@@ -234,6 +236,7 @@ export class Interface extends React.Component{
   // }
 
   handleHeadTilt1() {
+    // Up
     // counter = setInterval(() => {
     // }, 1000);
     let pan = this.latestPositions["head_1_joint"];
@@ -306,6 +309,7 @@ export class Interface extends React.Component{
   }
 
   handleHeadPan1() {
+    // Left
     let pan = 1.2;
     let tilt = this.latestPositions["head_2_joint"];
 
@@ -475,34 +479,20 @@ export class Interface extends React.Component{
   
   render () {
     return (
-
+      // Caution!: Word's viewpoint is "human", but movement is of kuri's
       <div className="handle_buttons">
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <div className="body_buttons">
               <p id="body_title">BODY</p>
               <div id="body_row">
-                {/* <Grid item xs={6} id="left">Move Backward<Button id="body_backward" startIcon={<ArrowBack />} onMouseDown={ this.handleBodyBackward.bind(this) } onMouseUp={ this.endHold.bind(this) } /></Grid>
-                <Grid item xs={6} id="right"><Button id="body_forward" startIcon={<ArrowForward />} onMouseDown={ this.handleBodyForward.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Forward </Grid> */}
                 <div id="left">Move Backward<Button id="body_backward" startIcon={<ArrowBack />} onMouseDown={ this.handleBodyBackward.bind(this) } onMouseUp={ this.endHold.bind(this) } /></div>
                 <div id="right"><Button id="body_forward" startIcon={<ArrowForward />} onMouseDown={ this.handleBodyForward.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Forward</div>
               </div>
               <div id="body_row">
-                {/* <Grid item xs={6} id="left">    Turn Left<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></Grid>
-                <Grid item xs={6} id="right"><Button id="body_rotright" startIcon={<Redo />}onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Right    </Grid> */}
-                <div id="left">Turn Right<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></div>
-                <div id="right"><Button id="body_rotright" startIcon={<Redo />} onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Left</div>
+                <div id="left">Turn Left<Button id="body_rotright" startIcon={<Undo />} onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } /></div>
+                <div id="right"><Button id="body_rotleft" startIcon={<Redo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Right</div>
               </div>
-            {/* <Grid item xs={6}>
-              <div id="body_row">
-                <label>Move Backward<Button id="body_backward" startIcon={<ArrowBack />} onMouseDown={ this.handleBodyBackward.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
-                <label>Turn Left<Button id="body_rotleft" startIcon={<Undo />} onMouseDown={ this.handleBodyRotLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
-              </div>
-            </Grid>
-            <Grid item xs={6}>
-                <label><Button id="body_forward" startIcon={<ArrowForward />} onMouseDown={ this.handleBodyForward.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Forward</label>
-                <label><Button id="body_rotright" startIcon={<Redo />}onMouseDown={ this.handleBodyRotRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Turn Right</label>
-            </Grid> */}
             </div>
             <div className="eye_buttons">
               <p id="eye_title">EYES</p>
@@ -532,60 +522,12 @@ export class Interface extends React.Component{
                 <img id="pan_img" src="/pan.png" alt="pan" />
               </div>
               <div id="body_row">
-                <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Right</Button>
-                <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Right</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Left</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Left</Button>
                 <Button id="head_pan" onClick={ this.handleHeadPan3.bind(this) } >Center</Button>
-                <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Left</Button>
-                <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Left</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Right</Button>
+                <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Right</Button>
               </div>
-              
-              {/* <Grid item xs={12}>
-                <div id="body_row"> */}
-                  {/* <label>Move Down<Button id="head_down" startIcon={<ArrowDownward />} onMouseDown={ this.handleHeadDown.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
-                  <label><Button id="head_up" startIcon={<ArrowUpward />} onMouseDown={ this.handleHeadUp.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Up</label> */}
-                  {/* <Button id="head_tilt" onClick={ this.handleHeadTilt1.bind(this) } >Most Up</Button>
-                </div>
-              </Grid>
-              <Grid item xs={12}>
-                <div id="body_row"> */}
-                  {/* <label>Move Left<Button id="head_left" startIcon={<RotateLeft />} onMouseDown={ this.handleHeadLeft.bind(this) } onMouseUp={ this.endHold.bind(this) } /></label>
-                  <label><Button id="head_right" startIcon={<RotateRight />} onMouseDown={ this.handleHeadRight.bind(this) } onMouseUp={ this.endHold.bind(this) } />Move Right</label> */}
-                  {/* <Button id="head_tilt" onClick={ this.handleHeadTilt2.bind(this) } >Up</Button>
-                </div>
-              </Grid>
-              <Grid item xs={12}>
-                <div id="body_row">
-                  <Grid item xs={3}>
-                    <Button id="head_pan" onClick={ this.handleHeadPan1.bind(this) } >Most Left&nbsp;</Button>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <Button id="head_pan" onClick={ this.handleHeadPan2.bind(this) } >Left&nbsp;</Button>
-                  </Grid>
-                  <Grid item xs={2} className="center">
-                    <Button id="head_tilt" className="tilt_center" onClick={ this.handleHeadTilt3.bind(this) } >Tilt Center</Button>
-                    <Button id="head_pan" className="pan_center" onClick={ this.handleHeadPan3.bind(this) } >Pan Center</Button>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <Button id="head_pan" onClick={ this.handleHeadPan4.bind(this) } >Right</Button>
-                  </Grid>
-                  <Grid item xs={3}>
-                    <Button id="head_pan" onClick={ this.handleHeadPan5.bind(this) } >Most Right</Button>
-                  </Grid>
-                </div>
-              </Grid>
-              <Grid item xs={12}>
-                <div id="body_row">
-                  <Button id="head_tilt" onClick={ this.handleHeadTilt4.bind(this) } >Down</Button>
-                </div>
-              </Grid>
-              <Grid item xs={12}>
-                <div id="body_row">
-                  <Button id="head_tilt" onClick={ this.handleHeadTilt5.bind(this) } >Most Down</Button>
-                </div>
-              </Grid> */}
-              {/* <div id="body_row">
-                <Button id="head_reset" onMouseDown={ this.handleResetHead.bind(this) } onMouseUp={ this.endHold.bind(this) } >Reset Head</Button>
-              </div> */}
             </div>
           </Grid>
         </Grid>

@@ -16,7 +16,6 @@ const buttonInterface = new Interface();
 
 buttonInterface.openEyes();
 
-
 root.render(
   <React.StrictMode>
     {/* <App /> */}
