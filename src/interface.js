@@ -514,8 +514,8 @@ export class Interface extends React.Component{
                 <Button id="head_tilt" onClick={ this.handleHeadTilt1.bind(this) } >Most Up</Button>
                 <Button id="head_tilt" onClick={ this.handleHeadTilt2.bind(this) } >Up</Button>
                 <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Center</Button>
-                <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Down</Button>
-                <Button id="head_tilt" onClick={ this.handleHeadTilt3.bind(this) } >Most Down</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt4.bind(this) } >Down</Button>
+                <Button id="head_tilt" onClick={ this.handleHeadTilt5.bind(this) } >Most Down</Button>
               </div>
               <p>PAN</p>
               <div id="body_row">
