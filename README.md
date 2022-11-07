@@ -33,7 +33,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Steps to Launch
+## Steps to Launching
 
 In Kuri, please make sure that rosbridge and roslaunch are available in Kuri (http://wiki.ros.org/rosbridge_suite). Compatible OS are Melodic and Noetic.
 
