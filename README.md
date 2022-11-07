@@ -40,11 +40,13 @@ In Kuri, please make sure that rosbridge and roslaunch are available in Kuri (ht
 Also, we are using react-ros (https://github.com/flynneva/react-ros) package to build connections.
 
 - From local computer, run following commands
-`ssh -L 9090:localhost:9090 [name]@[kuri-name]`
-`pw: [password]`
-`cd workspace_yx_test`
-`source devel/setup.bash`
-`roslaunch rosbridge_server rosbridge_websocket.launch`
+```
+ssh -L 9090:localhost:9090 [name]@[kuri-name]
+pw: [password]
+cd workspace_yx_test
+source devel/setup.bash
+roslaunch rosbridge_server rosbridge_websocket.launch
+```
 
 - Then, open another command prompt and run `npm run start` under cloned repository.
 
