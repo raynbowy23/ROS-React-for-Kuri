@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project of the interaction with Kuri through web app using React. Although we could find keyboard extention codes to interact with Kuri, this repository should be helpful to whom building web interface with React. 
+
+![img](frontpage.png)
 
 ## Available Scripts
 
@@ -19,6 +21,8 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+*The test code is not prepared yet.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,42 +33,27 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Steps to Launch
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In Kuri, please make sure that rosbridge and roslaunch are available in Kuri (http://wiki.ros.org/rosbridge_suite). Compatible OS are Melodic and Noetic.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Also, we are using react-ros (https://github.com/flynneva/react-ros) package to build connections.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- From local computer, run following commands
+`ssh -L 9090:localhost:9090 [name]@[kuri-name]`
+`pw: [password]`
+`cd workspace_yx_test`
+`source devel/setup.bash`
+`roslaunch rosbridge_server rosbridge_websocket.launch`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Then, open another command prompt and run `npm run start` under cloned repository.
 
-## Learn More
+- The location of launch files are under `../workspace/src/kuri_edu/launch`. When you need rosrun, the accosiated files are located `../workspace/src/kuri_teleop/scripts`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Here is Kuri's documentation `http://docs.freekuri.com/reference/ros-launch-files/`.
 
-### Code Splitting
+For more details, please feel free to send email to me tamaru@wisc.edu.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+MIT &copy; @raynbowy23

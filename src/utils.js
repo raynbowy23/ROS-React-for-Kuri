@@ -1,5 +1,3 @@
-import React, { createContext, useState } from 'react'
-import PropTypes from 'prop-types'
 import ROSLIB from 'roslib'
 
 // Connect to ROS bridge using websocket

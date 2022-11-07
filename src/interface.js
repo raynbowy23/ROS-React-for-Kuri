@@ -2,7 +2,7 @@ import ROSLIB from 'roslib'
 import React from "react";
 import './interface.css'
 import { Button } from '@mui/material';
-import { ArrowForward, ArrowBack, PlayArrow, Redo, Undo, ArrowUpward, ArrowDownward, RotateRight, RotateLeft } from '@mui/icons-material';
+import { ArrowForward, ArrowBack, Redo, Undo} from '@mui/icons-material';
 import { Grid } from '@mui/material';
 
 import { networkConfig } from './config/network_info.js';
@@ -24,7 +24,7 @@ const HEAD_TOPIC = '/head_controller/command';
 const TWIST_TYPE = 'geometry_msgs/Twist';
 const JOINT_STATE_TYPE = 'sensor_msgs/JointState';
 const JOINT_TRAJECTORY_TYPE = 'trajectory_msgs/JointTrajectory';
-const JOINT_TRAJECTORY_POINT_TYPE = 'trajectory_msgs/JointTrajectoryPoint'
+// const JOINT_TRAJECTORY_POINT_TYPE = 'trajectory_msgs/JointTrajectoryPoint'
 
 const LIN_SPEED = 0.2;
 const ANG_SPEED = 0.4;
@@ -32,7 +32,7 @@ const ANG_SPEED = 0.4;
 const HEAD_PAN_SPEED = 0.2;
 const HEAD_TILT_SPEED = 0.1;
 
-const RECONFIGURE_RUNNING = 0;
+// const RECONFIGURE_RUNNING = 0;
 
 let counter;
 
@@ -252,13 +252,13 @@ export class Interface extends React.Component{
     // }, 1000);
     let pan = this.latestPositions["head_1_joint"];
     let tilt = 0;
-    if (this.tilt_pos == 1){
+    if (this.tilt_pos === 1){
       tilt = 0.3 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 3){
+    } else if (this.tilt_pos === 3){
       tilt = -0.3 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 4){
+    } else if (this.tilt_pos === 4){
       tilt = -0.6 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 5){
+    } else if (this.tilt_pos === 5){
       tilt = -0.9 + this.latestPositions["head_2_joint"];
     }
     this.tilt_pos = 2;
@@ -269,13 +269,13 @@ export class Interface extends React.Component{
   handleHeadTilt3() {
     let pan = this.latestPositions["head_1_joint"];
     let tilt = 0;
-    if (this.tilt_pos == 1){
+    if (this.tilt_pos === 1){
       tilt = 0.6 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 2){
+    } else if (this.tilt_pos === 2){
       tilt = 0.3 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 4){
+    } else if (this.tilt_pos === 4){
       tilt = -0.3 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 5){
+    } else if (this.tilt_pos === 5){
       tilt = -0.6 + this.latestPositions["head_2_joint"];
     }
 
@@ -286,13 +286,13 @@ export class Interface extends React.Component{
   handleHeadTilt4() {
     let pan = this.latestPositions["head_1_joint"];
     let tilt = 0;
-    if (this.tilt_pos == 1){
+    if (this.tilt_pos === 1){
       tilt = 0.9 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 2){
+    } else if (this.tilt_pos === 2){
       tilt = 0.6 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 3){
+    } else if (this.tilt_pos === 3){
       tilt = 0.3 + this.latestPositions["head_2_joint"];
-    } else if (this.tilt_pos == 5){
+    } else if (this.tilt_pos === 5){
       tilt = -0.3 + this.latestPositions["head_2_joint"];
     }
 
@@ -321,13 +321,13 @@ export class Interface extends React.Component{
     let tilt = this.latestPositions["head_2_joint"];
     let pan = 0;
 
-    if (this.pan_pos == 1)
+    if (this.pan_pos === 1)
       pan = -0.4 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 3)
+    if (this.pan_pos === 3)
       pan = 0.35 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 4)
+    if (this.pan_pos === 4)
       pan = 0.7 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 5)
+    if (this.pan_pos === 5)
       pan = 1.1 + this.latestPositions["head_1_joint"];
 
     this.pan_pos = 2;
@@ -338,13 +338,13 @@ export class Interface extends React.Component{
     let tilt = this.latestPositions["head_2_joint"];
     let pan = 0;
 
-    if (this.pan_pos == 1)
+    if (this.pan_pos === 1)
       pan = -0.75 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 2)
+    if (this.pan_pos === 2)
       pan = -0.35 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 4)
+    if (this.pan_pos === 4)
       pan = 0.35 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 5)
+    if (this.pan_pos === 5)
       pan = 0.75 + this.latestPositions["head_1_joint"];
 
     this.pan_pos = 3;
@@ -355,13 +355,13 @@ export class Interface extends React.Component{
     let tilt = this.latestPositions["head_2_joint"];
     let pan = 0;
 
-    if (this.pan_pos == 1)
+    if (this.pan_pos === 1)
       pan = -1.1 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 2)
+    if (this.pan_pos === 2)
       pan = -0.7 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 3)
+    if (this.pan_pos === 3)
       pan = -0.35 + this.latestPositions["head_1_joint"];
-    if (this.pan_pos == 5)
+    if (this.pan_pos === 5)
       pan = 0.4 + this.latestPositions["head_1_joint"];
 
     this.pan_pos = 4;
@@ -479,7 +479,7 @@ export class Interface extends React.Component{
   
   render () {
     return (
-      // Caution!: Word's viewpoint is "human", but movement is of kuri's
+      // Caution!: Code's viewpoint is "human", but movement is of kuri's
       <div className="handle_buttons">
         <Grid container spacing={2}>
           <Grid item xs={6}>
